@@ -4,6 +4,11 @@
 # Class Registration System
 #
 
+from student import add_course
+from student import drop_course
+from student import list_courses
+from billing import display_bill
+
 # Define data structures
 student_list = [('1001', '111'), ('1002', '222'),
                     ('1003', '333'), ('1004', '444'),
@@ -75,23 +80,22 @@ def main():
                 show_menu()
                 choice = input("What do you want to do? ")
                 if choice == "1":
-                    add_class = input("Enter course you want to add: ")
+                    add_course(student_id, course_roster, course_max_size)
 
                 elif choice == "2":
-                    print("Enter course you want to drop: ")
+                    drop_course(student_id, course_roster)
 
-      ######
+                elif choice == "3":
+                    list_courses(student_id, course_roster)
 
-                #elif choice == "3":
-                    #print()
-                #elif choice == "4":
-                    # Implement displaying a bill logic here
-                    #pass
-                #elif choice == "0":
-                    #print("Logging out.")
-                    #break
-                #else:
-                    #print("Invalid choice. Please choose a valid option.")
+                elif choice == "4":
+                    display_bill(id, student_in_state, course_roster, course_hours)
+
+                elif choice == "0":
+                    print("Session ended.")
+                    break
+                else:
+                    print("Invalid choice. Please choose a valid option.")
 
 if __name__ == "__main__":
     main()
