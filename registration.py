@@ -56,7 +56,7 @@ def login(s_id, s_list):
 # It takes no parameters and returns no values.
 # -------------------------------------------------------------
 def show_menu():
-    print("----------------")
+    print("-" * 30)
     print("1. Add courses")
     print("2. Drop courses")
     print("3. List courses")

@@ -33,6 +33,7 @@ def display_bill(s_id, s_in_state, c_rosters, c_hours):
     print("-" * 30)
 
     total_cost = 0
+    total_hours = 0
 
     # The below code will calculate the cost for each selected course, every time the loop runs
     for course, hours in c_hours.items():
@@ -41,7 +42,8 @@ def display_bill(s_id, s_in_state, c_rosters, c_hours):
         if s_id in c_rosters.get(course, []):
             cost = hours * crdt_hr_fee
             total_cost += cost
+            total_hours += hours
             print("{:<10} {:<7} ${:,.2f}".format(course, hours, cost))
 
     # The below line will display the final amount of the bill the student have to pay
-    print("{:<20} {:<7} ${:,.2f}".format("Total", sum(c_hours.values()), total_cost))
+    print("{:<10} {:<7} ${:,.2f}".format("Total", total_hours, total_cost))
