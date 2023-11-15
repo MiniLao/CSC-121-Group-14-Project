@@ -11,27 +11,28 @@ from billing import display_bill
 
 # Define data structures
 student_list = [('1001', '111'), ('1002', '222'),
-                    ('1003', '333'), ('1004', '444'),
-                    ('1005', '555'), ('1006', '666')]
+                ('1003', '333'), ('1004', '444'),
+                ('1005', '555'), ('1006', '666')]
 student_in_state = {'1001': True,
-                        '1002': False,
-                        '1003': True,
-                        '1004': False,
-                        '1005': False,
-                        '1006': True}
+                    '1002': False,
+                    '1003': True,
+                    '1004': False,
+                    '1005': False,
+                    '1006': True}
 
 course_hours = {'CSC101': 3, 'CSC102': 4, 'CSC103': 5,
-                    'CSC104': 3, 'CSC105': 2}
+                'CSC104': 3, 'CSC105': 2}
 course_roster = {'CSC101': ['1004', '1003'],
-                     'CSC102': ['1001'],
-                     'CSC103': ['1002'],
-                     'CSC104': [],
-                     'CSC105': ['1005', '1002']}
+                 'CSC102': ['1001'],
+                 'CSC103': ['1002'],
+                 'CSC104': [],
+                 'CSC105': ['1005', '1002']}
 course_max_size = {'CSC101': 3, 'CSC102': 2, 'CSC103': 1,
-                       'CSC104': 3, 'CSC105': 4}
+                   'CSC104': 3, 'CSC105': 4}
 
 # Var
 add_class = ()
+
 
 # ------------------------------------------------------------
 # This function allows a student to log in.
@@ -40,14 +41,15 @@ add_class = ()
 # combination is in s_list, display message of verification and
 # return True. Otherwise, display error message and return False.
 # -------------------------------------------------------------
-def login(id, s_list):
+def login(s_id, s_list):
     pin = input("Enter your PIN: ")
     for student_id, student_pin in s_list:
-        if id == student_id and pin == student_pin:
+        if s_id == student_id and pin == student_pin:
             print("ID and PIN verified.\n")
             return True
     print("ID and PIN incorrect.\n")
     return False
+
 
 # ------------------------------------------------------------
 # This function displays the action menu to the logged in student.
@@ -89,7 +91,7 @@ def main():
                     list_courses(student_id, course_roster)
 
                 elif choice == "4":
-                    display_bill(id, student_in_state, course_roster, course_hours)
+                    display_bill(student_id, student_in_state, course_roster, course_hours)
 
                 elif choice == "0":
                     print("Session ended.")
@@ -97,10 +99,6 @@ def main():
                 else:
                     print("Invalid choice. Please choose a valid option.")
 
+
 if __name__ == "__main__":
     main()
-
-
-
-
-
