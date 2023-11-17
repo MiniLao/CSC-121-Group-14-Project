@@ -1,5 +1,8 @@
-# Student Name: Sylvia Ogunjobi
-# Billing program
+#
+# Group 14 Project
+# Main Author: Sylvia Ogunjobi
+# Cyndi Rathavongsa, Yair Rayo, Sylvia Ogunjobi
+# Class Registration System
 
 # This program is a function file which is called by the main program which is registration.py
 

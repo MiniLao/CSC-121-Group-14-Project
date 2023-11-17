@@ -1,6 +1,8 @@
-# ----------------------------------------------------------------
-# Author: Yair Rayo
-# Date: 11/05/2023
+#
+# Group 14 Project
+# Main Author: Yair Rayo
+# Cyndi Rathavongsa, Yair Rayo, Sylvia Ogunjobi
+# Class Registration System
 #
 # This module supports changes in the registered courses
 # for students in the class registration system.  It allows
@@ -24,7 +26,7 @@ def list_courses(s_id, c_roster):
     # information will be displayed below this label.
     print('Courses: ')
 
-    # This 'for loop' will
+    # This 'for loop' will display the enrolled message
     for course, roster in c_roster.items():
         if s_id in roster:
             print(course, 'Enrolled')

@@ -1,5 +1,6 @@
 #
 # Group 14 Project
+# Main Author: Cyndi Rathavongsa
 # Cyndi Rathavongsa, Yair Rayo, Sylvia Ogunjobi
 # Class Registration System
 #
@@ -76,6 +77,9 @@ def show_menu():
 def main():
     while True:
         student_id = input("Enter ID to log in, or 0 to quit: ")
+        if student_id == "0":
+            print("Session ended.")
+            break
         if login(student_id, student_list):
             print("Action Menu")
             while True:
